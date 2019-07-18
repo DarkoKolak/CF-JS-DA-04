@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hotels</title>
+</head>
+<body>
+
+<form id ="form" action="" method="get" accept-charset="utf-8"> 
+	<p>Hilton Hotel</p><input type="number" name="check" value="0">
+	<input type="submit" value="submit" onClick=HotelConstructor()> <br>
+	<p>Marriott Hotel</p><input type="number" name="check" value="0">
+	<input type="submit" value="submit" onClick=HotelConstructor()> <br>
+	<p>Holiday Inn</p><input type="number" name="check" value="0">
+	<input type="submit" value="submit" onClick=HotelConstructor()> <br>
+</form>
+
+
+
+<script>
+
+var wanted = document.forms["form"]["check"].value;
+
+function numberGenerator() {
+var a = Math.round(Math.random) * 10;
+return a;
+}
+	
+function HotelConstructor(name, rooms, booked, available) {
+this.name = name;
+this.rooms = rooms;
+this.booked = booked;
+this.available = available;
+this.wanted = wanted;
+this.checkAvailability = function() {
+
+    return this.rooms - this.booked;
+       };
+}
+
+var hiltonHotel = new HotelConstructor('Hilton', '80', '42', numberGenerator());
+var mariottHotel = new HotelConstructor('Marriott', '78', '56', numberGenerator());
+var holidayInnHotel = new HotelConstructor('Holiday Inn', '48', '32', numberGenerator());
+
+function Check(free, asked) {
+	if (asked > free) {
+		document.write("Sorry, no can do!")
+	}
+	else if (asked > 0 && asked <= free ) {
+		document.write("It's reserved!")
+	}
+}
+
+</script>
+</body>
+</html>
