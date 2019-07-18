@@ -1,29 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" type="text/css" href="fuel_economy.css">
 	<title>Fuel Economy</title>
 </head>
 <body>
 
 
 <main id="main">
-	<div id="kilometer">
-	</div>
+	
+		
 
-	<div id="liters">
-	</div>
+		<form id ="form" action="" method="get" accept-charset="utf-8">
+			Liters per kilometer
+			<br>
+			<input id="km" type="number" name="Kilometers driven"> 
+			<input id="lit" type="number" name="Liters consumed">
+			<input id="button" type="submit" name="calculate" value="submit">
+		</form>
+	
 
-	<div id="result">
+	<br>
+
+	<div id="displayResult">
 		
 	</div>
 
-
-
-
 </main>
+
+<div id="result">
+</div>
 
 
 <script>
+
+
+var division = kilometers / liters;
+var but = document.getElementById("button");
+
+var kilometers = document.getElementById("km");
+document.write(kilometers);
+
+var liters = document.getElementById("lit");
+document.write(liters);
+
+/*function calculate() {
+	var result = kilometers / liters;
+	result*=100;
+	document.write(result + " lieters spend on average every 100km");
+}
+
+but.addEventListener('click', calculate, true);*/
+
+
 
 
 </script>
